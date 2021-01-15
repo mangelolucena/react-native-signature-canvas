@@ -35,6 +35,7 @@ const SignatureView = forwardRef(({
   dotSize = 0,
   minWidth = 0.5,
   androidHardwareAccelerationDisabled = false,
+  indicatorColor = 'gray'
 }, ref) => {
   const [loading, setLoading] = useState(true);
   const webViewRef = useRef();
@@ -109,7 +110,7 @@ const SignatureView = forwardRef(({
         onLoadEnd={() => setLoading(false)}
       />
       {loading && <View style={styles.loadingOverlayContainer}>
-        <ActivityIndicator />
+        <ActivityIndicator color={indicatorColor} />
       </View>}
     </View>
   );
